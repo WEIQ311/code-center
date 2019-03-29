@@ -1,0 +1,29 @@
+# application配置文件
+spring:
+  aop:
+    auto: true
+    proxy-target-class: true
+  application:
+    name: codeCenter
+  datasource:
+    name: datasource
+  jackson:
+    date-format:  yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  mvc:
+    locale: zh_CN
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+server:
+  port: 9090
+  servlet:
+    context-path: /${spring.application.name}
+    # 防止上传文件乱码问题
+  tomcat:
+    basedir: ${user.home}/${spring.application.name}/tomcat
