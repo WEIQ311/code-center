@@ -25,7 +25,7 @@ start(){
     if [ $? -eq "0" ]; then
         echo "$APP_NAME is already running. pid=${pid}."
     else
-        nohup java -jar $APP_NAME >./nohup.out&
+        nohup java -jar $APP_NAME >./nohup.out& 2>& 1 &
     fi
 }
 
